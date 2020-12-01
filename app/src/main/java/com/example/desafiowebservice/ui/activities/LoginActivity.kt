@@ -1,8 +1,9 @@
-package com.example.desafiowebservice
+package com.example.desafiowebservice.ui.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.desafiowebservice.R
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -13,10 +14,19 @@ class LoginActivity : AppCompatActivity() {
         tvCreateAccount.setOnClickListener {
             callRegisterActivity()
         }
+
+        btnLogin.setOnClickListener {
+            callHomeActivity()
+        }
     }
 
     fun callRegisterActivity() {
         val intent = Intent(this, RegisterActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun callHomeActivity() {
+        val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
     }
 }
