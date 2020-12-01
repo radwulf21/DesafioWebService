@@ -10,4 +10,5 @@
 
     <color name="bg_app">#00162C</color>
     <color name="dark_red">#BB1C1F</color>
+    <color name="red">#EA2427</color>
 </resources>
