@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
+    tools:context=".RegisterActivity"
     android:background="@color/bg_app">
 
     <LinearLayout
@@ -21,20 +21,12 @@
         android:background="@drawable/round_shape"
         android:backgroundTint="@color/red">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|top"
-            android:layout_margin="15dp"
-            android:text="@string/title_login"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"/>
-
         <LinearLayout
+            android:id="@+id/llRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_marginTop="60dp"
             android:paddingTop="30dp"
             android:paddingBottom="30dp"
             android:paddingStart="15dp"
@@ -55,13 +47,29 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/email" />
+                    android:hint="@string/name" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
+                app:endIconMode="clear_text"
+                app:boxBackgroundColor="@color/material_on_primary_disabled"
+                android:textColorHint="@color/red"
+                app:hintTextColor="@color/red"
+                app:boxStrokeColor="@color/red">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
                 app:endIconMode="password_toggle"
                 app:boxBackgroundColor="@color/material_on_primary_disabled"
                 android:textColorHint="@color/red"
@@ -74,32 +82,27 @@
                     android:hint="@string/password" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.checkbox.MaterialCheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/remember"
-                android:textSize="18sp"
-                android:buttonTint="@color/red"
-                android:checked="true"/>
-
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_marginTop="20dp"
                 android:backgroundTint="@color/red"
-                android:text="@string/log_in"
+                android:text="@string/save"
                 android:textSize="18sp"/>
 
-            <TextView
-                android:id="@+id/tvCreateAccount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center"
-                android:text="@string/create_account"
-                android:textSize="18sp"/>
         </LinearLayout>
 
     </LinearLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/red"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="Register"
+        app:titleTextColor="@color/white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

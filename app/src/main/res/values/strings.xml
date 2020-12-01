@@ -6,4 +6,6 @@
     <string name="remember">Remember</string>
     <string name="log_in">LOG IN</string>
     <string name="create_account">Create account</string>
+    <string name="name">Name</string>
+    <string name="save">Save</string>
 </resources>
