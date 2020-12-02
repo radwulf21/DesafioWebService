@@ -20,7 +20,10 @@
         <activity
             android:name=".ui.activities.RegisterActivity"
             android:parentActivityName=".ui.activities.LoginActivity" />
-        <activity android:name=".ui.activities.home.HomeActivity"/>
+        <activity android:name=".ui.activities.home.HomeActivity" />
+        <activity
+            android:name=".ui.activities.DetailsHQActivity"
+            android:parentActivityName=".ui.activities.home.HomeActivity"/>
     </application>
 
 </manifest>

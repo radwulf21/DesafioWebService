@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.example.desafiowebservice.R
 import com.example.desafiowebservice.domain.HQ
 
-class HomeViewModel : ViewModel() {
+class HomeViewModel() : ViewModel() {
     val listHQ = MutableLiveData<ArrayList<HQ>>()
 
     fun fillListHQ() {

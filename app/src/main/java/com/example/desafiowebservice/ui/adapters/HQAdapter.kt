@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiowebservice.R
 import com.example.desafiowebservice.domain.HQ
 
-class HQAdapter() : RecyclerView.Adapter<HQAdapter.HQAdapterViewHolder>() {
+class HQAdapter(var listener: OnClickHQListener) : RecyclerView.Adapter<HQAdapter.HQAdapterViewHolder>() {
     var listHQ = arrayListOf<HQ>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HQAdapterViewHolder {
@@ -30,8 +30,23 @@ class HQAdapter() : RecyclerView.Adapter<HQAdapter.HQAdapterViewHolder>() {
         notifyDataSetChanged()
     }
 
-    class HQAdapterViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    inner class HQAdapterViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), View.OnClickListener {
         val ivHQ: ImageView = itemView.findViewById(R.id.ivHQ)
         val tvNumHQ: TextView = itemView.findViewById(R.id.tvNumHQ)
+
+        init {
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            val position = adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                listener.onClickHQ(position)
+            }
+        }
+    }
+
+    interface OnClickHQListener {
+        fun onClickHQ(position: Int)
     }
 }
