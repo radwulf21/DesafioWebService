@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/round_shape"
+        android:background="@drawable/round_shape_containers"
         android:backgroundTint="@color/red">
 
         <TextView
@@ -39,7 +39,7 @@
             android:paddingBottom="30dp"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
-            android:background="@drawable/round_shape"
+            android:background="@drawable/round_shape_containers"
             android:backgroundTint="@color/white">
 
             <com.google.android.material.textfield.TextInputLayout

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_app"
-    tools:context=".ui.activities.HomeActivity">
+    tools:context=".ui.activities.home.HomeActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tbHome"
@@ -23,5 +23,20 @@
             android:src="@drawable/marvel_logo" />
 
     </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHQ"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:layout_marginStart="5dp"
+        android:foregroundGravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbHome"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3"
+        tools:listitem="@layout/item_hq"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

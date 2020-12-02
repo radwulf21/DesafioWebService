@@ -20,7 +20,7 @@
         <activity
             android:name=".ui.activities.RegisterActivity"
             android:parentActivityName=".ui.activities.LoginActivity" />
-        <activity android:name=".ui.activities.HomeActivity"/>
+        <activity android:name=".ui.activities.home.HomeActivity"/>
     </application>
 
 </manifest>
