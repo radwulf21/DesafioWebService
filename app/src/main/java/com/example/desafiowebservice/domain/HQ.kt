@@ -1,4 +1,3 @@
 package com.example.desafiowebservice.domain
 
-class HQ(var imgHQ: Int, var numHQ: String) {
-}
+data class HQ(val data: Data)

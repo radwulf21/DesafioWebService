@@ -1,4 +1,4 @@
-package com.example.desafiowebservice.ui.adapters
+package com.example.desafiowebservice.ui.activities.home
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,10 +7,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiowebservice.R
-import com.example.desafiowebservice.domain.HQ
+import com.example.desafiowebservice.domain.Result
+import com.squareup.picasso.Picasso
 
-class HQAdapter(var listener: OnClickHQListener) : RecyclerView.Adapter<HQAdapter.HQAdapterViewHolder>() {
-    var listHQ = arrayListOf<HQ>()
+class HQAdapter(var listener: OnClickHQListener, var context: HomeActivity) : RecyclerView.Adapter<HQAdapter.HQAdapterViewHolder>() {
+    var listHQ = arrayListOf<Result>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HQAdapterViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_hq, parent, false)
@@ -19,13 +20,13 @@ class HQAdapter(var listener: OnClickHQListener) : RecyclerView.Adapter<HQAdapte
 
     override fun onBindViewHolder(holder: HQAdapterViewHolder, position: Int) {
         val hq = listHQ[position]
-        holder.ivHQ.setImageResource(hq.imgHQ)
-        holder.tvNumHQ.text = hq.numHQ
+        Picasso.with(context).load("${hq.thumbnail?.path}.${hq.thumbnail?.extension}").into(holder.ivHQ)
+        holder.tvNumHQ.text = hq.id.toString()
     }
 
     override fun getItemCount() = listHQ.size
 
-    fun addListHQ(list: ArrayList<HQ>) {
+    fun addListHQ(list: ArrayList<Result>) {
         listHQ.addAll(list)
         notifyDataSetChanged()
     }

@@ -11,25 +11,25 @@
     <ImageView
         android:id="@+id/ivBackgroundHQ"
         android:layout_width="match_parent"
-        android:layout_height="230dp"
+        android:layout_height="320dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/amz_spider"
-        android:scaleType="fitXY"/>
+        android:scaleType="centerCrop"/>
 
     <ImageView
         android:id="@+id/ivCoverHQ"
         android:layout_width="115dp"
         android:layout_height="170dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="120dp"
         android:background="@color/white"
         android:padding="3dp"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/spidey"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbDetailsHQ"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"/>
+        app:srcCompat="@drawable/spidey" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -94,11 +94,17 @@
                 android:text="Price: "/>
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="$ "/>
+
+            <TextView
                 android:id="@+id/tvPriceHQ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="$ 5,99"/>
+                android:text="5.99"/>
 
         </LinearLayout>
 

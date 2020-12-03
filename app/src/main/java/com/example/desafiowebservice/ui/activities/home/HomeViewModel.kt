@@ -2,18 +2,24 @@ package com.example.desafiowebservice.ui.activities.home
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.desafiowebservice.R
+import androidx.lifecycle.viewModelScope
 import com.example.desafiowebservice.domain.HQ
+import com.example.desafiowebservice.service.Repository
+import kotlinx.coroutines.launch
 
-class HomeViewModel() : ViewModel() {
-    val listHQ = MutableLiveData<ArrayList<HQ>>()
+class HomeViewModel(val repository: Repository) : ViewModel() {
+    val HQ = MutableLiveData<HQ>()
 
-    fun fillListHQ() {
-        val hq1 = HQ(R.drawable.spidey, "#95")
-        val hq2 = HQ(R.drawable.spidey, "#95")
-        val hq3 = HQ(R.drawable.spidey, "#95")
-        val hq4 = HQ(R.drawable.spidey, "#95")
-
-        listHQ.value = arrayListOf(hq1, hq2, hq3, hq4)
+    fun getHQ() {
+        viewModelScope.launch {
+            val hq = repository.getHQ(
+                1,
+                18,
+                "1",
+                "6eb7e8896ec5850c52515a8a23ee97f0",
+                "40a3aa568bb269dfad85ae0c4a297181"
+            )
+            HQ.value = hq
+        }
     }
 }
