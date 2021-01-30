@@ -14,7 +14,7 @@ class HomeViewModel(val repository: Repository) : ViewModel() {
         viewModelScope.launch {
             val hq = repository.getHQ(
                 1,
-                18,
+                30,
                 "1",
                 "6eb7e8896ec5850c52515a8a23ee97f0",
                 "40a3aa568bb269dfad85ae0c4a297181"
