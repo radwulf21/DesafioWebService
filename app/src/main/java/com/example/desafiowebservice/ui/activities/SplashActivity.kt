@@ -14,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
         Handler().postDelayed({
             callLoginActivity()
             finish()
-        }, 3000)
+        }, 2000)
     }
 
     private fun callLoginActivity() {

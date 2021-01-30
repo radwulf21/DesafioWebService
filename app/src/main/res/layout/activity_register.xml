@@ -39,8 +39,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
-                android:textColorHint="@color/red"
-                app:boxBackgroundColor="@color/material_on_primary_disabled"
                 app:boxStrokeColor="@color/red"
                 app:endIconMode="clear_text"
                 app:hintTextColor="@color/red">
@@ -55,8 +53,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
-                android:textColorHint="@color/red"
-                app:boxBackgroundColor="@color/material_on_primary_disabled"
                 app:boxStrokeColor="@color/red"
                 app:endIconMode="clear_text"
                 app:hintTextColor="@color/red">
@@ -71,8 +67,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
-                android:textColorHint="@color/red"
-                app:boxBackgroundColor="@color/material_on_primary_disabled"
                 app:boxStrokeColor="@color/red"
                 app:endIconMode="password_toggle"
                 app:hintTextColor="@color/red">
@@ -110,19 +104,18 @@
     <LinearLayout
         android:layout_width="90dp"
         android:layout_height="90dp"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/round_shape_add_user"
         android:gravity="center"
-        android:layout_marginTop="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/llBgRegister"
+        app:layout_constraintBottom_toTopOf="@+id/llBgRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tbRegister"
-        app:layout_constraintVertical_bias="0.0"
-        android:background="@drawable/round_shape_add_user">
+        app:layout_constraintTop_toBottomOf="@+id/tbRegister">
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            app:srcCompat="@drawable/add_user"/>
+            app:srcCompat="@drawable/ic_person" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

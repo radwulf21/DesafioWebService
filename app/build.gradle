@@ -65,6 +65,10 @@ dependencies {
     //Dependência Gson
     implementation 'com.google.code.gson:gson:2.8.6'
 
-    //Dependência Picasso
-    implementation 'com.squareup.picasso:picasso:2.5.2'
+    //Dependência Glide
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+    // Dependências d-max dialog
+    implementation 'com.github.d-max:spots-dialog:1.1@aar'
 }

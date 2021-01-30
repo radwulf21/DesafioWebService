@@ -2,30 +2,43 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.desafiowebservice">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DesafioWebService">
-        <activity android:name=".ui.activities.SplashActivity">
+        android:theme="@style/Theme.DesafioWebService"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ui.activities.SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activities.LoginActivity" />
+        <activity
+            android:name=".ui.activities.LoginActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activities.RegisterActivity"
-            android:parentActivityName=".ui.activities.LoginActivity" />
-        <activity android:name=".ui.activities.home.HomeActivity" />
+            android:parentActivityName=".ui.activities.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.home.HomeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activities.DetailsHQActivity"
-            android:parentActivityName=".ui.activities.home.HomeActivity"/>
+            android:parentActivityName=".ui.activities.home.HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.CoverHQActivity"
+            android:parentActivityName=".ui.activities.DetailsHQActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

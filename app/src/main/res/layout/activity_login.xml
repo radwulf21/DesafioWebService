@@ -47,8 +47,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 app:endIconMode="clear_text"
-                app:boxBackgroundColor="@color/material_on_primary_disabled"
-                android:textColorHint="@color/red"
                 app:hintTextColor="@color/red"
                 app:boxStrokeColor="@color/red">
 
@@ -63,8 +61,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 app:endIconMode="password_toggle"
-                app:boxBackgroundColor="@color/material_on_primary_disabled"
-                android:textColorHint="@color/red"
                 app:hintTextColor="@color/red"
                 app:boxStrokeColor="@color/red">
 

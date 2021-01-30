@@ -3,6 +3,7 @@ package com.example.desafiowebservice.ui.activities.home
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.desafiowebservice.R
 import com.example.desafiowebservice.service.repository
 import com.example.desafiowebservice.ui.activities.DetailsHQActivity
+import dmax.dialog.SpotsDialog
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity(), HQAdapter.OnClickHQListener {

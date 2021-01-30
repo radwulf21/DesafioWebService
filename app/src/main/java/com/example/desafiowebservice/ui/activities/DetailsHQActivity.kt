@@ -1,11 +1,12 @@
 package com.example.desafiowebservice.ui.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.bumptech.glide.Glide
 import com.example.desafiowebservice.R
 import com.example.desafiowebservice.domain.Result
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_details_hq.*
 
 class DetailsHQActivity : AppCompatActivity() {
@@ -16,18 +17,10 @@ class DetailsHQActivity : AppCompatActivity() {
         setSupportActionBar(tbDetailsHQ)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        ivCoverHQ.setOnClickListener {
-            llCoverHQExpanded.visibility = View.VISIBLE
-        }
-
-        ivCloseCoverHQExpanded.setOnClickListener {
-            llCoverHQExpanded.visibility = View.GONE
-        }
-
         val hq = intent.getParcelableExtra<Result>("hq")
 
-        Picasso.with(this).load("${hq?.thumbnail?.path}.${hq?.thumbnail?.extension}").into(ivBackgroundHQ)
-        Picasso.with(this).load("${hq?.thumbnail?.path}.${hq?.thumbnail?.extension}").into(ivCoverHQ)
+        Glide.with(this).load("${hq?.thumbnail?.path}.${hq?.thumbnail?.extension}").into(ivBackgroundHQ)
+        Glide.with(this).load("${hq?.thumbnail?.path}.${hq?.thumbnail?.extension}").into(ivCoverHQ)
 
         tvTitleHQ.text = if (hq?.title != null) hq.title else "No data"
 
@@ -39,6 +32,14 @@ class DetailsHQActivity : AppCompatActivity() {
 
         tvNumPagesHQ.text = hq?.pageCount.toString()
 
-        Picasso.with(this).load("${hq?.thumbnail?.path}.${hq?.thumbnail?.extension}").into(ivCoverHQExpanded)
+        ivCoverHQ.setOnClickListener {
+            startActivity(Intent(
+                Intent(this, CoverHQActivity::class.java).apply {
+                    putExtra("urlHQ", "${hq?.thumbnail?.path}.${hq?.thumbnail?.extension}")
+                }
+            ))
+        }
+
+        // Glide.with(this).load("${hq?.thumbnail?.path}.${hq?.thumbnail?.extension}").into()
     }
 }
